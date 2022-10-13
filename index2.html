@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.1.251">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>Quarto demo</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1.6em;
+  vertical-align: middle;
+}
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { color: #008000; } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { color: #008000; font-weight: bold; } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+
+<script src="index2_files/libs/clipboard/clipboard.min.js"></script>
+<script src="index2_files/libs/quarto-html/quarto.js"></script>
+<script src="index2_files/libs/quarto-html/popper.min.js"></script>
+<script src="index2_files/libs/quarto-html/tippy.umd.min.js"></script>
+<script src="index2_files/libs/quarto-html/anchor.min.js"></script>
+<link href="index2_files/libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="index2_files/libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="index2_files/libs/bootstrap/bootstrap.min.js"></script>
+<link href="index2_files/libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="index2_files/libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.6/require.min.js" integrity="sha512-c3Nl8+7g4LMSTdrm621y7kf9v3SDPnhxLNhcjFJbKECVnmZHTdo+IRO05sNLTH/D3vA6u1X32ehoLC7WFVdheg==" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script>
+<script type="application/javascript">define('jquery', [],function() {return window.jQuery;})</script>
+        <script type="text/javascript">
+        window.PlotlyConfig = {MathJaxConfig: 'local'};
+        if (window.MathJax && window.MathJax.Hub && window.MathJax.Hub.Config) {window.MathJax.Hub.Config({SVG: {font: "STIX-Web"}});}
+        if (typeof require !== 'undefined') {
+        require.undef("plotly");
+        requirejs.config({
+            paths: {
+                'plotly': ['https://cdn.plot.ly/plotly-2.14.0.min']
+            }
+        });
+        require(['plotly'], function(Plotly) {
+            window._Plotly = Plotly;
+        });
+        }
+        </script>
+        
+<script src="https://unpkg.com/@jupyter-widgets/html-manager@*/dist/embed-amd.js" crossorigin="anonymous"></script>
+
+
+</head>
+
+<body class="fullcontent">
+
+<div id="quarto-content" class="page-columns page-rows-contents page-layout-article">
+
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Quarto demo</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+    
+  </div>
+  
+
+</header>
+
+<section id="これから行うデモでは最近話題のaiモデル2つとデータ可視化ライブラリ2つの計4つのモデルをコードと共に出力しhtml形式で出力しています" class="level3">
+<h3 class="anchored" data-anchor-id="これから行うデモでは最近話題のaiモデル2つとデータ可視化ライブラリ2つの計4つのモデルをコードと共に出力しhtml形式で出力しています">これから行うデモでは、最近話題のAIモデル2つと、データ可視化ライブラリ2つの、計4つのモデルをコードと共に出力し、html形式で出力しています。</h3>
+<ol type="1">
+<li>まずは、<em>whisper</em>を試してみました。<br>
+whisperは、OpenAIが開発した汎用的な音声認識アプリです。詳細は<a href="https://github.com/openai/whisper">こちら</a><br>
+国会答弁の音声約30秒の文字起こしを行いました。(音声ファイルはpaperを参照)<br>
+パラメータ数で5つのモデルが提供されており、今回は<em>base</em>と<em>large</em>で検証を行いました</li>
+</ol>
+<div class="cell" data-execution_count="1">
+<details>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> whisper</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+</div>
+<ul>
+<li>base(2番目に小さい)</li>
+</ul>
+<div class="cell" data-execution_count="2">
+<details>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="op">%%</span>time</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>model <span class="op">=</span> whisper.load_model(<span class="st">"base"</span>)</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>result <span class="op">=</span> model.transcribe(<span class="st">"aud.m4a"</span>)</span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(result[<span class="st">"text"</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>有入依存度の高い分野ほど大きな影響を受けています。多国の景気回復や経済発展で、世界全体の自由像が引き続きに引こまれる中、更なる高く上昇リスクに加え、欲しいものが開幕なる、開幕リスクも大きくなっています。現在、新社の脳機は反動対その多部品不足、この中による海外作ら一緒にの機能不全もあり、長いもので1年半と聞いています。
+CPU times: user 8.17 s, sys: 1.48 s, total: 9.65 s
+Wall time: 6.44 s</code></pre>
+</div>
+</div>
+<ul>
+<li>large(最も大きい)</li>
+</ul>
+<div class="cell" data-execution_count="3">
+<details>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="op">%%</span>time</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>model <span class="op">=</span> whisper.load_model(<span class="st">"large"</span>)</span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>result <span class="op">=</span> model.transcribe(<span class="st">"aud.m4a"</span>)</span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(result[<span class="st">"text"</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>輸入依存度の高い分野ほど大きな影響を受けています他国の景気回復や経済発展で世界全体の需要像が引き続き煮込まれる中さらなる価格上昇リスクに加え欲しいものが買えなくなる買い負けリスクも大きくなっています現在新社の納期は半導体その他部品不足その中による海外サプライチェーンの機能不全もあり長いもので1年半と聞いています
+CPU times: user 2min 21s, sys: 21.4 s, total: 2min 43s
+Wall time: 1min 50s</code></pre>
+</div>
+</div>
+<p>ご覧のように、時間はかかるものの精度の向上がわかります。</p>
+<ol start="2" type="1">
+<li>次に、<em>Stable Diffusion</em>を試してみました。<br>
+stable diffusionは、テキストから画像を出力する拡散モデルです。詳細は<a href="https://github.com/CompVis/stable-diffusion">こちら</a></li>
+</ol>
+<div class="cell" data-execution_count="4">
+<details>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="op">%%</span>time</span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> PIL <span class="im">import</span> Image</span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> diffusers <span class="im">import</span> DiffusionPipeline</span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a> </span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>model_id <span class="op">=</span> <span class="st">"CompVis/ldm-text2im-large-256"</span></span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a> </span>
+<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a><span class="co"># load model and scheduler</span></span>
+<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a>ldm <span class="op">=</span> DiffusionPipeline.from_pretrained(model_id)</span>
+<span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a> </span>
+<span id="cb6-10"><a href="#cb6-10" aria-hidden="true" tabindex="-1"></a><span class="co"># run pipeline in inference (sample random noise and denoise)</span></span>
+<span id="cb6-11"><a href="#cb6-11" aria-hidden="true" tabindex="-1"></a>prompt <span class="op">=</span> <span class="st">"A cat sleeping on cloud"</span></span>
+<span id="cb6-12"><a href="#cb6-12" aria-hidden="true" tabindex="-1"></a>images <span class="op">=</span> ldm([prompt], num_inference_steps<span class="op">=</span><span class="dv">10</span>, eta<span class="op">=</span><span class="fl">0.3</span>, guidance_scale<span class="op">=</span><span class="dv">6</span>)[<span class="st">"sample"</span>]</span>
+<span id="cb6-13"><a href="#cb6-13" aria-hidden="true" tabindex="-1"></a> </span>
+<span id="cb6-14"><a href="#cb6-14" aria-hidden="true" tabindex="-1"></a><span class="co"># save images</span></span>
+<span id="cb6-15"><a href="#cb6-15" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> idx, image <span class="kw">in</span> <span class="bu">enumerate</span>(images):</span>
+<span id="cb6-16"><a href="#cb6-16" aria-hidden="true" tabindex="-1"></a>    image.save(<span class="ss">f"sd-</span><span class="sc">{</span>idx<span class="sc">}</span><span class="ss">.png"</span>)</span>
+<span id="cb6-17"><a href="#cb6-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-18"><a href="#cb6-18" aria-hidden="true" tabindex="-1"></a><span class="co">#show</span></span>
+<span id="cb6-19"><a href="#cb6-19" aria-hidden="true" tabindex="-1"></a>im <span class="op">=</span> Image.<span class="bu">open</span>(<span class="st">'sd-0.png'</span>)</span>
+<span id="cb6-20"><a href="#cb6-20" aria-hidden="true" tabindex="-1"></a>im</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-display">
+<script type="application/vnd.jupyter.widget-view+json">
+{"model_id":"0896a20b7ac74bf88ce5d0972a4f3448","version_major":2,"version_minor":0}
+</script>
+</div>
+<div class="cell-output cell-output-display">
+<script type="application/vnd.jupyter.widget-view+json">
+{"model_id":"47be19c152454b3881b5c9e0b9e3ab6c","version_major":2,"version_minor":0}
+</script>
+</div>
+<div class="cell-output cell-output-stdout">
+<pre><code>CPU times: user 38.3 s, sys: 20 s, total: 58.3 s
+Wall time: 33.4 s</code></pre>
+</div>
+<div class="cell-output cell-output-display" data-execution_count="4">
+<p><img src="index2_files/figure-html/cell-5-output-4.png" class="img-fluid"></p>
+</div>
+</div>
+<p>最後にデータ可視化ライブラリをいくつか紹介します。</p>
+<ol start="3" type="1">
+<li>ipyleaflet<br>
+ipyleafletは、地理空間データを地図上に可視化するライブラリです。<br>
+類似するものに<em>folium</em>がありますが、ipyleafletは、時系列と共に変化する地理空間データを動的に描画することが可能です。</li>
+</ol>
+<div class="cell" data-execution_count="5">
+<details>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="op">%%</span>time</span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> ipyleaflet <span class="im">import</span> Map, Marker, basemaps, basemap_to_tiles</span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>m <span class="op">=</span> Map(</span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>  basemap<span class="op">=</span>basemap_to_tiles(</span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a>    basemaps.NASAGIBS.ModisTerraTrueColorCR, <span class="st">"2017-04-08"</span></span>
+<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a>  ),</span>
+<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a>  center<span class="op">=</span>(<span class="fl">52.204793</span>, <span class="fl">360.121558</span>),</span>
+<span id="cb8-8"><a href="#cb8-8" aria-hidden="true" tabindex="-1"></a>  zoom<span class="op">=</span><span class="dv">4</span></span>
+<span id="cb8-9"><a href="#cb8-9" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb8-10"><a href="#cb8-10" aria-hidden="true" tabindex="-1"></a>m.add_layer(Marker(location<span class="op">=</span>(<span class="fl">52.204793</span>, <span class="fl">360.121558</span>)))</span>
+<span id="cb8-11"><a href="#cb8-11" aria-hidden="true" tabindex="-1"></a>m.add_layer(Marker(location<span class="op">=</span>(<span class="fl">22.204793</span>, <span class="fl">300.121558</span>)))</span>
+<span id="cb8-12"><a href="#cb8-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-13"><a href="#cb8-13" aria-hidden="true" tabindex="-1"></a>m</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>CPU times: user 55.2 ms, sys: 7.7 ms, total: 62.9 ms
+Wall time: 71.3 ms</code></pre>
+</div>
+<div class="cell-output cell-output-display">
+<script type="application/vnd.jupyter.widget-view+json">
+{"model_id":"68ae94b60f5c46718413ac40950c56c9","version_major":2,"version_minor":0}
+</script>
+</div>
+</div>
+<ol start="4" type="1">
+<li>plotly<br>
+plotlyは、</li>
+</ol>
+<div class="cell" data-execution_count="6">
+<details>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="op">%%</span>time</span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>xs <span class="op">=</span> np.linspace(<span class="dv">0</span>, <span class="dv">10</span>, <span class="dv">100</span>)</span>
+<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a>sins <span class="op">=</span> np.sin(xs)</span>
+<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a>randoms <span class="op">=</span> np.random.rand(<span class="dv">100</span>)</span>
+<span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-7"><a href="#cb10-7" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> plotly.graph_objects <span class="im">as</span> go</span>
+<span id="cb10-8"><a href="#cb10-8" aria-hidden="true" tabindex="-1"></a>fig <span class="op">=</span> go.Figure(data<span class="op">=</span>[</span>
+<span id="cb10-9"><a href="#cb10-9" aria-hidden="true" tabindex="-1"></a>    go.Scatter(x<span class="op">=</span>xs, y<span class="op">=</span>sins, name<span class="op">=</span><span class="st">"sin"</span>),</span>
+<span id="cb10-10"><a href="#cb10-10" aria-hidden="true" tabindex="-1"></a>    go.Scatter(x<span class="op">=</span>xs, y<span class="op">=</span>randoms, name<span class="op">=</span><span class="st">"random"</span>),</span>
+<span id="cb10-11"><a href="#cb10-11" aria-hidden="true" tabindex="-1"></a>])</span>
+<span id="cb10-12"><a href="#cb10-12" aria-hidden="true" tabindex="-1"></a>fig.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-display">
+
+<div>                            <div id="a9291003-9ce7-47a9-b6eb-634661b6cc4d" class="plotly-graph-div" style="height:525px; width:100%;"></div>            <script type="text/javascript">                require(["plotly"], function(Plotly) {                    window.PLOTLYENV=window.PLOTLYENV || {};                                    if (document.getElementById("a9291003-9ce7-47a9-b6eb-634661b6cc4d")) {                    Plotly.newPlot(                        "a9291003-9ce7-47a9-b6eb-634661b6cc4d",                        [{"name":"sin","x":[0.0,0.10101010101010101,0.20202020202020202,0.30303030303030304,0.40404040404040403,0.5050505050505051,0.6060606060606061,0.7070707070707071,0.8080808080808081,0.9090909090909091,1.0101010101010102,1.1111111111111112,1.2121212121212122,1.3131313131313131,1.4141414141414141,1.5151515151515151,1.6161616161616161,1.7171717171717171,1.8181818181818181,1.9191919191919191,2.0202020202020203,2.121212121212121,2.2222222222222223,2.323232323232323,2.4242424242424243,2.525252525252525,2.6262626262626263,2.727272727272727,2.8282828282828283,2.929292929292929,3.0303030303030303,3.131313131313131,3.2323232323232323,3.3333333333333335,3.4343434343434343,3.5353535353535355,3.6363636363636362,3.7373737373737375,3.8383838383838382,3.9393939393939394,4.040404040404041,4.141414141414141,4.242424242424242,4.343434343434343,4.444444444444445,4.545454545454545,4.646464646464646,4.747474747474747,4.848484848484849,4.94949494949495,5.05050505050505,5.151515151515151,5.252525252525253,5.353535353535354,5.454545454545454,5.555555555555555,5.656565656565657,5.757575757575758,5.858585858585858,5.959595959595959,6.0606060606060606,6.161616161616162,6.262626262626262,6.363636363636363,6.4646464646464645,6.565656565656566,6.666666666666667,6.767676767676767,6.8686868686868685,6.96969696969697,7.070707070707071,7.171717171717171,7.2727272727272725,7.373737373737374,7.474747474747475,7.575757575757575,7.6767676767676765,7.777777777777778,7.878787878787879,7.979797979797979,8.080808080808081,8.181818181818182,8.282828282828282,8.383838383838384,8.484848484848484,8.585858585858587,8.686868686868687,8.787878787878787,8.88888888888889,8.98989898989899,9.09090909090909,9.191919191919192,9.292929292929292,9.393939393939394,9.494949494949495,9.595959595959595,9.696969696969697,9.797979797979798,9.8989898989899,10.0],"y":[0.0,0.1008384202581046,0.2006488565226854,0.2984138044476411,0.3931366121483298,0.48385164043793466,0.5696341069089657,0.6496095135057065,0.7229625614794605,0.7889454628442574,0.8468855636029834,0.8961922010299563,0.9363627251042848,0.9669876227092996,0.9877546923600838,0.9984522269003895,0.9989711717233568,0.9893062365143401,0.9695559491823237,0.9399216514301312,0.9007054462029555,0.8523071179396752,0.7952200570230491,0.7300262299764464,0.6573902466827755,0.5780525851065732,0.4928220425889235,0.40256749066949654,0.30820901749007684,0.2107085480771929,0.11106003812412972,0.010279341240534697,-0.09060614703340773,-0.19056796287548539,-0.28858705872043244,-0.38366419180611233,-0.47483011082223947,-0.5611554368152017,-0.6417601376193878,-0.7158224992291902,-0.7825875026542022,-0.8413745208608701,-0.8915842573351402,-0.9327048555318336,-0.9643171169287782,-0.9860987744909296,-0.9978277779792126,-0.9993845576124357,-0.9907532430056771,-0.9720218249588334,-0.9433812584459996,-0.9051235159501367,-0.8576386109880517,-0.8014106221689696,-0.7370127583189133,-0.6651015149788224,-0.5864099818472351,-0.5017403693939113,-0.4119558308308628,-0.31797166281061867,-0.22074597455506334,-0.12126992053716677,-0.020557596287260064,0.08036429967028173,0.18046693235991093,0.27872981867755725,0.37415123057121996,0.4657584070256517,0.5526174707464059,0.6338429484489058,0.7086067976992182,0.7761468482835805,0.8357745720522589,0.8868821020290788,0.9289484292312513,0.9615447140268235,0.9843386578838236,0.9970978909438748,0.9996923408861117,0.9920955589323228,0.9743849894755358,0.9467411805833543,0.9094459434244625,0.8628794793817834,0.8075165041395626,0.7439214082568444,0.6727425035622647,0.5947054140244975,0.510605678474283,0.4213006405886069,0.32770070881349983,0.23076007532505177,0.13146698864295842,0.03083367906114098,-0.07011396040064677,-0.1703468323280965,-0.26884312591038406,-0.3645987336558887,-0.45663748763377376,-0.5440211108893698],"type":"scatter"},{"name":"random","x":[0.0,0.10101010101010101,0.20202020202020202,0.30303030303030304,0.40404040404040403,0.5050505050505051,0.6060606060606061,0.7070707070707071,0.8080808080808081,0.9090909090909091,1.0101010101010102,1.1111111111111112,1.2121212121212122,1.3131313131313131,1.4141414141414141,1.5151515151515151,1.6161616161616161,1.7171717171717171,1.8181818181818181,1.9191919191919191,2.0202020202020203,2.121212121212121,2.2222222222222223,2.323232323232323,2.4242424242424243,2.525252525252525,2.6262626262626263,2.727272727272727,2.8282828282828283,2.929292929292929,3.0303030303030303,3.131313131313131,3.2323232323232323,3.3333333333333335,3.4343434343434343,3.5353535353535355,3.6363636363636362,3.7373737373737375,3.8383838383838382,3.9393939393939394,4.040404040404041,4.141414141414141,4.242424242424242,4.343434343434343,4.444444444444445,4.545454545454545,4.646464646464646,4.747474747474747,4.848484848484849,4.94949494949495,5.05050505050505,5.151515151515151,5.252525252525253,5.353535353535354,5.454545454545454,5.555555555555555,5.656565656565657,5.757575757575758,5.858585858585858,5.959595959595959,6.0606060606060606,6.161616161616162,6.262626262626262,6.363636363636363,6.4646464646464645,6.565656565656566,6.666666666666667,6.767676767676767,6.8686868686868685,6.96969696969697,7.070707070707071,7.171717171717171,7.2727272727272725,7.373737373737374,7.474747474747475,7.575757575757575,7.6767676767676765,7.777777777777778,7.878787878787879,7.979797979797979,8.080808080808081,8.181818181818182,8.282828282828282,8.383838383838384,8.484848484848484,8.585858585858587,8.686868686868687,8.787878787878787,8.88888888888889,8.98989898989899,9.09090909090909,9.191919191919192,9.292929292929292,9.393939393939394,9.494949494949495,9.595959595959595,9.696969696969697,9.797979797979798,9.8989898989899,10.0],"y":[0.7032904784203033,0.09874242797764254,0.5907374525376841,0.6564458050493767,0.6945271349712248,0.16282630104685314,0.6160935364953398,0.626625712487143,0.4465800459864858,0.664323626167952,0.34138623766453646,0.3022382438976744,0.8115864057735703,0.6549647295089379,0.7047198813747332,0.06715016622646552,0.8901497889671411,0.09387308222366975,0.37909420872509003,0.7043280078018709,0.0067829418923702756,0.007048034785278712,0.2468338052138691,0.686773536388204,0.04722260849119353,0.6041701736604306,0.031425419038575764,0.8112262019158634,0.03484972535465425,0.09057732510480754,0.8473358164510011,0.9249793923878353,0.6458194652180353,0.5511331375752223,0.3473893500856374,0.2939868715345253,0.2967511298270782,0.2700539558105238,0.5307193414612322,0.38625645148845256,0.8852649482369321,0.16006606192013506,0.6806277057697058,0.019461857651782766,0.005936459735700339,0.3268716619598194,0.6764895222494799,0.4139396900644525,0.9835808422645577,0.3069362029117263,0.24157634860048938,0.6285113740748272,0.7460446911840513,0.22343207737763515,0.015615497567344039,0.13025557968458756,0.680972967905728,0.6763990645230049,0.5269929546102181,0.37174269089568235,0.25223504724284773,0.8847660463184951,0.21830671031756155,0.4422109523593942,0.8658195832577661,0.5094204037248166,0.28344421604446035,0.9568278907502387,0.7963679525165247,0.7244945773286253,0.557802747333068,0.2414336336742794,0.6505914309668794,0.1048356796772053,0.5195313456399299,0.38812664974452593,0.7104210584960509,0.175446428287659,0.84630373570769,0.2537760759093336,0.5516660467126359,0.0034045781967032562,0.3987057040711415,0.20479601816901694,0.9720022131503402,0.7804990965380122,0.6970371152145396,0.15518105574898144,0.13905197322152263,0.4938689586124877,0.7212073386190113,0.022293792753869335,0.951153233397883,0.46074318442291906,0.9018122018765872,0.1918809490542277,0.9326877138470658,0.39984095789622287,0.3290456286673644,0.9563874502291101],"type":"scatter"}],                        {"template":{"data":{"histogram2dcontour":[{"type":"histogram2dcontour","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"choropleth":[{"type":"choropleth","colorbar":{"outlinewidth":0,"ticks":""}}],"histogram2d":[{"type":"histogram2d","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"heatmap":[{"type":"heatmap","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"heatmapgl":[{"type":"heatmapgl","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"contourcarpet":[{"type":"contourcarpet","colorbar":{"outlinewidth":0,"ticks":""}}],"contour":[{"type":"contour","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"surface":[{"type":"surface","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"mesh3d":[{"type":"mesh3d","colorbar":{"outlinewidth":0,"ticks":""}}],"scatter":[{"fillpattern":{"fillmode":"overlay","size":10,"solidity":0.2},"type":"scatter"}],"parcoords":[{"type":"parcoords","line":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatterpolargl":[{"type":"scatterpolargl","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"bar":[{"error_x":{"color":"#2a3f5f"},"error_y":{"color":"#2a3f5f"},"marker":{"line":{"color":"#E5ECF6","width":0.5},"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"bar"}],"scattergeo":[{"type":"scattergeo","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatterpolar":[{"type":"scatterpolar","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"histogram":[{"marker":{"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"histogram"}],"scattergl":[{"type":"scattergl","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatter3d":[{"type":"scatter3d","line":{"colorbar":{"outlinewidth":0,"ticks":""}},"marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scattermapbox":[{"type":"scattermapbox","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatterternary":[{"type":"scatterternary","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scattercarpet":[{"type":"scattercarpet","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"carpet":[{"aaxis":{"endlinecolor":"#2a3f5f","gridcolor":"white","linecolor":"white","minorgridcolor":"white","startlinecolor":"#2a3f5f"},"baxis":{"endlinecolor":"#2a3f5f","gridcolor":"white","linecolor":"white","minorgridcolor":"white","startlinecolor":"#2a3f5f"},"type":"carpet"}],"table":[{"cells":{"fill":{"color":"#EBF0F8"},"line":{"color":"white"}},"header":{"fill":{"color":"#C8D4E3"},"line":{"color":"white"}},"type":"table"}],"barpolar":[{"marker":{"line":{"color":"#E5ECF6","width":0.5},"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"barpolar"}],"pie":[{"automargin":true,"type":"pie"}]},"layout":{"autotypenumbers":"strict","colorway":["#636efa","#EF553B","#00cc96","#ab63fa","#FFA15A","#19d3f3","#FF6692","#B6E880","#FF97FF","#FECB52"],"font":{"color":"#2a3f5f"},"hovermode":"closest","hoverlabel":{"align":"left"},"paper_bgcolor":"white","plot_bgcolor":"#E5ECF6","polar":{"bgcolor":"#E5ECF6","angularaxis":{"gridcolor":"white","linecolor":"white","ticks":""},"radialaxis":{"gridcolor":"white","linecolor":"white","ticks":""}},"ternary":{"bgcolor":"#E5ECF6","aaxis":{"gridcolor":"white","linecolor":"white","ticks":""},"baxis":{"gridcolor":"white","linecolor":"white","ticks":""},"caxis":{"gridcolor":"white","linecolor":"white","ticks":""}},"coloraxis":{"colorbar":{"outlinewidth":0,"ticks":""}},"colorscale":{"sequential":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"sequentialminus":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"diverging":[[0,"#8e0152"],[0.1,"#c51b7d"],[0.2,"#de77ae"],[0.3,"#f1b6da"],[0.4,"#fde0ef"],[0.5,"#f7f7f7"],[0.6,"#e6f5d0"],[0.7,"#b8e186"],[0.8,"#7fbc41"],[0.9,"#4d9221"],[1,"#276419"]]},"xaxis":{"gridcolor":"white","linecolor":"white","ticks":"","title":{"standoff":15},"zerolinecolor":"white","automargin":true,"zerolinewidth":2},"yaxis":{"gridcolor":"white","linecolor":"white","ticks":"","title":{"standoff":15},"zerolinecolor":"white","automargin":true,"zerolinewidth":2},"scene":{"xaxis":{"backgroundcolor":"#E5ECF6","gridcolor":"white","linecolor":"white","showbackground":true,"ticks":"","zerolinecolor":"white","gridwidth":2},"yaxis":{"backgroundcolor":"#E5ECF6","gridcolor":"white","linecolor":"white","showbackground":true,"ticks":"","zerolinecolor":"white","gridwidth":2},"zaxis":{"backgroundcolor":"#E5ECF6","gridcolor":"white","linecolor":"white","showbackground":true,"ticks":"","zerolinecolor":"white","gridwidth":2}},"shapedefaults":{"line":{"color":"#2a3f5f"}},"annotationdefaults":{"arrowcolor":"#2a3f5f","arrowhead":0,"arrowwidth":1},"geo":{"bgcolor":"white","landcolor":"#E5ECF6","subunitcolor":"white","showland":true,"showlakes":true,"lakecolor":"white"},"title":{"x":0.05},"mapbox":{"style":"light"}}}},                        {"responsive": true}                    ).then(function(){
+                            
+var gd = document.getElementById('a9291003-9ce7-47a9-b6eb-634661b6cc4d');
+var x = new MutationObserver(function (mutations, observer) {{
+        var display = window.getComputedStyle(gd).display;
+        if (!display || display === 'none') {{
+            console.log([gd, 'removed!']);
+            Plotly.purge(gd);
+            observer.disconnect();
+        }}
+}});
+
+// Listen for the removal of the full notebook cells
+var notebookContainer = gd.closest('#notebook-container');
+if (notebookContainer) {{
+    x.observe(notebookContainer, {childList: true});
+}}
+
+// Listen for the clearing of the current output cell
+var outputEl = gd.closest('.output');
+if (outputEl) {{
+    x.observe(outputEl, {childList: true});
+}}
+
+                        })                };                });            </script>        </div>
+</div>
+<div class="cell-output cell-output-stdout">
+<pre><code>CPU times: user 8.76 ms, sys: 5.03 ms, total: 13.8 ms
+Wall time: 21.7 ms</code></pre>
+</div>
+</div>
+<p>この他にも可視化ライブラリがあるので、興味がある方は<a href="https://jupyter.org/widgets">こちらのページ</a>を参照ください</p>
+</section>
+
+</main>
+<!-- /main column -->
+<script type="application/vnd.jupyter.widget-state+json">
+{"state":{"0896a20b7ac74bf88ce5d0972a4f3448":{"model_module":"@jupyter-widgets/controls","model_module_version":"1.5.0","model_name":"HBoxModel","state":{"_dom_classes":[],"_model_module":"@jupyter-widgets/controls","_model_module_version":"1.5.0","_model_name":"HBoxModel","_view_count":null,"_view_module":"@jupyter-widgets/controls","_view_module_version":"1.5.0","_view_name":"HBoxView","box_style":"","children":["IPY_MODEL_5b44b5786dcc4b939a767b8b31a4b396","IPY_MODEL_88e8b531721f4838978fe9423934c4ce","IPY_MODEL_d82ea4efd7d042b48fce371df3e3c6fa"],"layout":"IPY_MODEL_c3788ce8190e48c6a1ec16ea3512e02f"}},"0c397b46331f4b8aa731a0eb8a42bdb2":{"model_module":"jupyter-leaflet","model_module_version":"^0.17","model_name":"LeafletAttributionControlModel","state":{"_model_module":"jupyter-leaflet","_model_module_version":"^0.17","_model_name":"LeafletAttributionControlModel","_view_count":null,"_view_module":"jupyter-leaflet","_view_module_version":"^0.17","_view_name":"LeafletAttributionControlView","options":["position","prefix"],"position":"bottomright","prefix":"ipyleaflet"}},"0f9d0251272b4317b1b994394931be26":{"model_module":"jupyter-leaflet","model_module_version":"^0.17","model_name":"LeafletTileLayerModel","state":{"_model_module":"jupyter-leaflet","_model_module_version":"^0.17","_model_name":"LeafletTileLayerModel","_view_count":null,"_view_module":"jupyter-leaflet","_view_module_version":"^0.17","_view_name":"LeafletTileLayerView","attribution":"Imagery provided by services from the Global Imagery Browse Services (GIBS), operated by the NASA/GSFC/Earth Science Data and Information System (<a href=\"https://earthdata.nasa.gov\">ESDIS</a>) with funding provided by NASA/HQ.","base":true,"bottom":true,"bounds":null,"detect_retina":false,"loading":false,"max_native_zoom":null,"max_zoom":9,"min_native_zoom":null,"min_zoom":1,"name":"NASAGIBS.ModisTerraTrueColorCR","no_wrap":false,"opacity":1,"options":["attribution","bounds","detect_retina","max_native_zoom","max_zoom","min_native_zoom","min_zoom","no_wrap","tile_size","tms","zoom_offset"],"pane":"","popup":null,"popup_max_height":null,"popup_max_width":300,"popup_min_width":50,"show_loading":false,"tile_size":256,"tms":false,"url":"https://map1.vis.earthdata.nasa.gov/wmts-webmerc/MODIS_Terra_CorrectedReflectance_TrueColor/default/2017-04-08/GoogleMapsCompatible_Level9/{z}/{y}/{x}.jpg","visible":true,"zoom_offset":0}},"18c6775336854b73b68ca0199eda5e1c":{"model_module":"@jupyter-widgets/base","model_module_version":"1.2.0","model_name":"LayoutModel","state":{"_model_module":"@jupyter-widgets/base","_model_module_version":"1.2.0","_model_name":"LayoutModel","_view_count":null,"_view_module":"@jupyter-widgets/base","_view_module_version":"1.2.0","_view_name":"LayoutView","align_content":null,"align_items":null,"align_self":null,"border":null,"bottom":null,"display":null,"flex":null,"flex_flow":null,"grid_area":null,"grid_auto_columns":null,"grid_auto_flow":null,"grid_auto_rows":null,"grid_column":null,"grid_gap":null,"grid_row":null,"grid_template_areas":null,"grid_template_columns":null,"grid_template_rows":null,"height":null,"justify_content":null,"justify_items":null,"left":null,"margin":null,"max_height":null,"max_width":null,"min_height":null,"min_width":null,"object_fit":null,"object_position":null,"order":null,"overflow":null,"overflow_x":null,"overflow_y":null,"padding":null,"right":null,"top":null,"visibility":null,"width":null}},"44c71d7fb4dd4838bfc2c0ac27ab286a":{"model_module":"@jupyter-widgets/controls","model_module_version":"1.5.0","model_name":"FloatProgressModel","state":{"_dom_classes":[],"_model_module":"@jupyter-widgets/controls","_model_module_version":"1.5.0","_model_name":"FloatProgressModel","_view_count":null,"_view_module":"@jupyter-widgets/controls","_view_module_version":"1.5.0","_view_name":"ProgressView","bar_style":"success","description":"","description_tooltip":null,"layout":"IPY_MODEL_607c950862c645e699357cf7969c306c","max":10,"min":0,"orientation":"horizontal","style":"IPY_MODEL_7e64ea41eba0408aa219c8c84de4a44d","value":10}},"47be19c152454b3881b5c9e0b9e3ab6c":{"model_module":"@jupyter-widgets/controls","model_module_version":"1.5.0","model_name":"HBoxModel","state":{"_dom_classes":[],"_model_module":"@jupyter-widgets/controls","_model_module_version":"1.5.0","_model_name":"HBoxModel","_view_count":null,"_view_module":"@jupyter-widgets/controls","_view_module_version":"1.5.0","_view_name":"HBoxView","box_style":"","children":["IPY_MODEL_d8d6d67ead3d414ab632be89a69df0a3","IPY_MODEL_44c71d7fb4dd4838bfc2c0ac27ab286a","IPY_MODEL_e6cec96ca99d43c5a68c089c6666cf54"],"layout":"IPY_MODEL_94e319c9349042579dbf96e8c027a4cf"}},"51fe48fc340c432ab60ca75430c9bae4":{"model_module":"@jupyter-widgets/controls","model_module_version":"1.5.0","model_name":"DescriptionStyleModel","state":{"_model_module":"@jupyter-widgets/controls","_model_module_version":"1.5.0","_model_name":"DescriptionStyleModel","_view_count":null,"_view_module":"@jupyter-widgets/base","_view_module_version":"1.2.0","_view_name":"StyleView","description_width":""}},"5b44b5786dcc4b939a767b8b31a4b396":{"model_module":"@jupyter-widgets/controls","model_module_version":"1.5.0","model_name":"HTMLModel","state":{"_dom_classes":[],"_model_module":"@jupyter-widgets/controls","_model_module_version":"1.5.0","_model_name":"HTMLModel","_view_count":null,"_view_module":"@jupyter-widgets/controls","_view_module_version":"1.5.0","_view_name":"HTMLView","description":"","description_tooltip":null,"layout":"IPY_MODEL_cb051ae8a51e4bec996ca25baf0d6453","placeholder":"​","style":"IPY_MODEL_f287723f18324006bc5c2b378f1300bb","value":"Fetching 11 files: 100%"}},"607c950862c645e699357cf7969c306c":{"model_module":"@jupyter-widgets/base","model_module_version":"1.2.0","model_name":"LayoutModel","state":{"_model_module":"@jupyter-widgets/base","_model_module_version":"1.2.0","_model_name":"LayoutModel","_view_count":null,"_view_module":"@jupyter-widgets/base","_view_module_version":"1.2.0","_view_name":"LayoutView","align_content":null,"align_items":null,"align_self":null,"border":null,"bottom":null,"display":null,"flex":null,"flex_flow":null,"grid_area":null,"grid_auto_columns":null,"grid_auto_flow":null,"grid_auto_rows":null,"grid_column":null,"grid_gap":null,"grid_row":null,"grid_template_areas":null,"grid_template_columns":null,"grid_template_rows":null,"height":null,"justify_content":null,"justify_items":null,"left":null,"margin":null,"max_height":null,"max_width":null,"min_height":null,"min_width":null,"object_fit":null,"object_position":null,"order":null,"overflow":null,"overflow_x":null,"overflow_y":null,"padding":null,"right":null,"top":null,"visibility":null,"width":null}},"6100d37521d440dabccb4c7b46d340db":{"model_module":"jupyter-leaflet","model_module_version":"^0.17","model_name":"LeafletZoomControlModel","state":{"_model_module":"jupyter-leaflet","_model_module_version":"^0.17","_model_name":"LeafletZoomControlModel","_view_count":null,"_view_module":"jupyter-leaflet","_view_module_version":"^0.17","_view_name":"LeafletZoomControlView","options":["position","zoom_in_text","zoom_in_title","zoom_out_text","zoom_out_title"],"position":"topleft","zoom_in_text":"+","zoom_in_title":"Zoom in","zoom_out_text":"-","zoom_out_title":"Zoom out"}},"6104027260674b0c9f7dff83b9225b0e":{"model_module":"jupyter-leaflet","model_module_version":"^0.17","model_name":"LeafletMarkerModel","state":{"_model_module":"jupyter-leaflet","_model_module_version":"^0.17","_model_name":"LeafletMarkerModel","_view_count":null,"_view_module":"jupyter-leaflet","_view_module_version":"^0.17","_view_name":"LeafletMarkerView","alt":"","base":false,"bottom":false,"draggable":true,"icon":null,"keyboard":true,"location":[22.204793,300.121558],"name":"","opacity":1,"options":["alt","draggable","keyboard","rise_offset","rise_on_hover","rotation_angle","rotation_origin","title","z_index_offset"],"pane":"","popup":null,"popup_max_height":null,"popup_max_width":300,"popup_min_width":50,"rise_offset":250,"rise_on_hover":false,"rotation_angle":0,"rotation_origin":"","title":"","visible":true,"z_index_offset":0}},"68ae94b60f5c46718413ac40950c56c9":{"model_module":"jupyter-leaflet","model_module_version":"^0.17","model_name":"LeafletMapModel","state":{"_dom_classes":[],"_model_module":"jupyter-leaflet","_model_module_version":"^0.17","_model_name":"LeafletMapModel","_view_count":null,"_view_module":"jupyter-leaflet","_view_module_version":"^0.17","_view_name":"LeafletMapView","bottom":0,"bounce_at_zoom_limits":true,"box_zoom":true,"center":[52.204793,360.121558],"close_popup_on_click":true,"controls":["IPY_MODEL_6100d37521d440dabccb4c7b46d340db","IPY_MODEL_0c397b46331f4b8aa731a0eb8a42bdb2"],"crs":{"custom":false,"name":"EPSG3857"},"default_style":"IPY_MODEL_c4a51bafdae64f1395ac6b68384cac1f","double_click_zoom":true,"dragging":true,"dragging_style":"IPY_MODEL_afc788e63a5d43a4ad0a41bbfc86aaf4","east":0,"fullscreen":false,"inertia":true,"inertia_deceleration":3000,"inertia_max_speed":1500,"interpolation":"bilinear","keyboard":true,"keyboard_pan_offset":80,"keyboard_zoom_offset":1,"layers":["IPY_MODEL_0f9d0251272b4317b1b994394931be26","IPY_MODEL_cb6b755272dd4f9e86176393afb2f53d","IPY_MODEL_6104027260674b0c9f7dff83b9225b0e"],"layout":"IPY_MODEL_18c6775336854b73b68ca0199eda5e1c","left":9007199254740991,"max_zoom":null,"min_zoom":null,"modisdate":"2022-10-12","north":0,"options":["bounce_at_zoom_limits","box_zoom","center","close_popup_on_click","double_click_zoom","dragging","fullscreen","inertia","inertia_deceleration","inertia_max_speed","interpolation","keyboard","keyboard_pan_offset","keyboard_zoom_offset","max_zoom","min_zoom","prefer_canvas","scroll_wheel_zoom","tap","tap_tolerance","touch_zoom","world_copy_jump","zoom","zoom_animation_threshold","zoom_delta","zoom_snap"],"panes":{},"prefer_canvas":false,"right":0,"scroll_wheel_zoom":false,"south":0,"style":"IPY_MODEL_9da3cd8080b94eafa0f3e4858c4fb7b2","tap":true,"tap_tolerance":15,"top":9007199254740991,"touch_zoom":true,"west":0,"window_url":"","world_copy_jump":false,"zoom":4,"zoom_animation_threshold":4,"zoom_delta":1,"zoom_snap":1}},"7e64ea41eba0408aa219c8c84de4a44d":{"model_module":"@jupyter-widgets/controls","model_module_version":"1.5.0","model_name":"ProgressStyleModel","state":{"_model_module":"@jupyter-widgets/controls","_model_module_version":"1.5.0","_model_name":"ProgressStyleModel","_view_count":null,"_view_module":"@jupyter-widgets/base","_view_module_version":"1.2.0","_view_name":"StyleView","bar_color":null,"description_width":""}},"866419923981458b91d586a63a830567":{"model_module":"@jupyter-widgets/base","model_module_version":"1.2.0","model_name":"LayoutModel","state":{"_model_module":"@jupyter-widgets/base","_model_module_version":"1.2.0","_model_name":"LayoutModel","_view_count":null,"_view_module":"@jupyter-widgets/base","_view_module_version":"1.2.0","_view_name":"LayoutView","align_content":null,"align_items":null,"align_self":null,"border":null,"bottom":null,"display":null,"flex":null,"flex_flow":null,"grid_area":null,"grid_auto_columns":null,"grid_auto_flow":null,"grid_auto_rows":null,"grid_column":null,"grid_gap":null,"grid_row":null,"grid_template_areas":null,"grid_template_columns":null,"grid_template_rows":null,"height":null,"justify_content":null,"justify_items":null,"left":null,"margin":null,"max_height":null,"max_width":null,"min_height":null,"min_width":null,"object_fit":null,"object_position":null,"order":null,"overflow":null,"overflow_x":null,"overflow_y":null,"padding":null,"right":null,"top":null,"visibility":null,"width":null}},"88e8b531721f4838978fe9423934c4ce":{"model_module":"@jupyter-widgets/controls","model_module_version":"1.5.0","model_name":"FloatProgressModel","state":{"_dom_classes":[],"_model_module":"@jupyter-widgets/controls","_model_module_version":"1.5.0","_model_name":"FloatProgressModel","_view_count":null,"_view_module":"@jupyter-widgets/controls","_view_module_version":"1.5.0","_view_name":"ProgressView","bar_style":"success","description":"","description_tooltip":null,"layout":"IPY_MODEL_866419923981458b91d586a63a830567","max":11,"min":0,"orientation":"horizontal","style":"IPY_MODEL_ba8914c5c63c49a7944c038355ac2cd0","value":11}},"94e319c9349042579dbf96e8c027a4cf":{"model_module":"@jupyter-widgets/base","model_module_version":"1.2.0","model_name":"LayoutModel","state":{"_model_module":"@jupyter-widgets/base","_model_module_version":"1.2.0","_model_name":"LayoutModel","_view_count":null,"_view_module":"@jupyter-widgets/base","_view_module_version":"1.2.0","_view_name":"LayoutView","align_content":null,"align_items":null,"align_self":null,"border":null,"bottom":null,"display":null,"flex":null,"flex_flow":null,"grid_area":null,"grid_auto_columns":null,"grid_auto_flow":null,"grid_auto_rows":null,"grid_column":null,"grid_gap":null,"grid_row":null,"grid_template_areas":null,"grid_template_columns":null,"grid_template_rows":null,"height":null,"justify_content":null,"justify_items":null,"left":null,"margin":null,"max_height":null,"max_width":null,"min_height":null,"min_width":null,"object_fit":null,"object_position":null,"order":null,"overflow":null,"overflow_x":null,"overflow_y":null,"padding":null,"right":null,"top":null,"visibility":null,"width":null}},"95af8e081d6346e4a0f0d3b2ee37ced3":{"model_module":"@jupyter-widgets/base","model_module_version":"1.2.0","model_name":"LayoutModel","state":{"_model_module":"@jupyter-widgets/base","_model_module_version":"1.2.0","_model_name":"LayoutModel","_view_count":null,"_view_module":"@jupyter-widgets/base","_view_module_version":"1.2.0","_view_name":"LayoutView","align_content":null,"align_items":null,"align_self":null,"border":null,"bottom":null,"display":null,"flex":null,"flex_flow":null,"grid_area":null,"grid_auto_columns":null,"grid_auto_flow":null,"grid_auto_rows":null,"grid_column":null,"grid_gap":null,"grid_row":null,"grid_template_areas":null,"grid_template_columns":null,"grid_template_rows":null,"height":null,"justify_content":null,"justify_items":null,"left":null,"margin":null,"max_height":null,"max_width":null,"min_height":null,"min_width":null,"object_fit":null,"object_position":null,"order":null,"overflow":null,"overflow_x":null,"overflow_y":null,"padding":null,"right":null,"top":null,"visibility":null,"width":null}},"9da3cd8080b94eafa0f3e4858c4fb7b2":{"model_module":"jupyter-leaflet","model_module_version":"^0.17","model_name":"LeafletMapStyleModel","state":{"_model_module":"jupyter-leaflet","_model_module_version":"^0.17","_model_name":"LeafletMapStyleModel","_view_count":null,"_view_module":"@jupyter-widgets/base","_view_module_version":"1.2.0","_view_name":"StyleView","cursor":"grab"}},"9f57fbf837ec439193f3bd987b35d4e9":{"model_module":"@jupyter-widgets/controls","model_module_version":"1.5.0","model_name":"DescriptionStyleModel","state":{"_model_module":"@jupyter-widgets/controls","_model_module_version":"1.5.0","_model_name":"DescriptionStyleModel","_view_count":null,"_view_module":"@jupyter-widgets/base","_view_module_version":"1.2.0","_view_name":"StyleView","description_width":""}},"a9e29dc4440446218b9c09c2cad63110":{"model_module":"@jupyter-widgets/controls","model_module_version":"1.5.0","model_name":"DescriptionStyleModel","state":{"_model_module":"@jupyter-widgets/controls","_model_module_version":"1.5.0","_model_name":"DescriptionStyleModel","_view_count":null,"_view_module":"@jupyter-widgets/base","_view_module_version":"1.2.0","_view_name":"StyleView","description_width":""}},"afc788e63a5d43a4ad0a41bbfc86aaf4":{"model_module":"jupyter-leaflet","model_module_version":"^0.17","model_name":"LeafletMapStyleModel","state":{"_model_module":"jupyter-leaflet","_model_module_version":"^0.17","_model_name":"LeafletMapStyleModel","_view_count":null,"_view_module":"@jupyter-widgets/base","_view_module_version":"1.2.0","_view_name":"StyleView","cursor":"move"}},"b60c9995c63544b98dbb5070b9feb74d":{"model_module":"@jupyter-widgets/base","model_module_version":"1.2.0","model_name":"LayoutModel","state":{"_model_module":"@jupyter-widgets/base","_model_module_version":"1.2.0","_model_name":"LayoutModel","_view_count":null,"_view_module":"@jupyter-widgets/base","_view_module_version":"1.2.0","_view_name":"LayoutView","align_content":null,"align_items":null,"align_self":null,"border":null,"bottom":null,"display":null,"flex":null,"flex_flow":null,"grid_area":null,"grid_auto_columns":null,"grid_auto_flow":null,"grid_auto_rows":null,"grid_column":null,"grid_gap":null,"grid_row":null,"grid_template_areas":null,"grid_template_columns":null,"grid_template_rows":null,"height":null,"justify_content":null,"justify_items":null,"left":null,"margin":null,"max_height":null,"max_width":null,"min_height":null,"min_width":null,"object_fit":null,"object_position":null,"order":null,"overflow":null,"overflow_x":null,"overflow_y":null,"padding":null,"right":null,"top":null,"visibility":null,"width":null}},"ba8914c5c63c49a7944c038355ac2cd0":{"model_module":"@jupyter-widgets/controls","model_module_version":"1.5.0","model_name":"ProgressStyleModel","state":{"_model_module":"@jupyter-widgets/controls","_model_module_version":"1.5.0","_model_name":"ProgressStyleModel","_view_count":null,"_view_module":"@jupyter-widgets/base","_view_module_version":"1.2.0","_view_name":"StyleView","bar_color":null,"description_width":""}},"c3788ce8190e48c6a1ec16ea3512e02f":{"model_module":"@jupyter-widgets/base","model_module_version":"1.2.0","model_name":"LayoutModel","state":{"_model_module":"@jupyter-widgets/base","_model_module_version":"1.2.0","_model_name":"LayoutModel","_view_count":null,"_view_module":"@jupyter-widgets/base","_view_module_version":"1.2.0","_view_name":"LayoutView","align_content":null,"align_items":null,"align_self":null,"border":null,"bottom":null,"display":null,"flex":null,"flex_flow":null,"grid_area":null,"grid_auto_columns":null,"grid_auto_flow":null,"grid_auto_rows":null,"grid_column":null,"grid_gap":null,"grid_row":null,"grid_template_areas":null,"grid_template_columns":null,"grid_template_rows":null,"height":null,"justify_content":null,"justify_items":null,"left":null,"margin":null,"max_height":null,"max_width":null,"min_height":null,"min_width":null,"object_fit":null,"object_position":null,"order":null,"overflow":null,"overflow_x":null,"overflow_y":null,"padding":null,"right":null,"top":null,"visibility":null,"width":null}},"c4a51bafdae64f1395ac6b68384cac1f":{"model_module":"jupyter-leaflet","model_module_version":"^0.17","model_name":"LeafletMapStyleModel","state":{"_model_module":"jupyter-leaflet","_model_module_version":"^0.17","_model_name":"LeafletMapStyleModel","_view_count":null,"_view_module":"@jupyter-widgets/base","_view_module_version":"1.2.0","_view_name":"StyleView","cursor":"grab"}},"cb051ae8a51e4bec996ca25baf0d6453":{"model_module":"@jupyter-widgets/base","model_module_version":"1.2.0","model_name":"LayoutModel","state":{"_model_module":"@jupyter-widgets/base","_model_module_version":"1.2.0","_model_name":"LayoutModel","_view_count":null,"_view_module":"@jupyter-widgets/base","_view_module_version":"1.2.0","_view_name":"LayoutView","align_content":null,"align_items":null,"align_self":null,"border":null,"bottom":null,"display":null,"flex":null,"flex_flow":null,"grid_area":null,"grid_auto_columns":null,"grid_auto_flow":null,"grid_auto_rows":null,"grid_column":null,"grid_gap":null,"grid_row":null,"grid_template_areas":null,"grid_template_columns":null,"grid_template_rows":null,"height":null,"justify_content":null,"justify_items":null,"left":null,"margin":null,"max_height":null,"max_width":null,"min_height":null,"min_width":null,"object_fit":null,"object_position":null,"order":null,"overflow":null,"overflow_x":null,"overflow_y":null,"padding":null,"right":null,"top":null,"visibility":null,"width":null}},"cb6b755272dd4f9e86176393afb2f53d":{"model_module":"jupyter-leaflet","model_module_version":"^0.17","model_name":"LeafletMarkerModel","state":{"_model_module":"jupyter-leaflet","_model_module_version":"^0.17","_model_name":"LeafletMarkerModel","_view_count":null,"_view_module":"jupyter-leaflet","_view_module_version":"^0.17","_view_name":"LeafletMarkerView","alt":"","base":false,"bottom":false,"draggable":true,"icon":null,"keyboard":true,"location":[52.204793,360.121558],"name":"","opacity":1,"options":["alt","draggable","keyboard","rise_offset","rise_on_hover","rotation_angle","rotation_origin","title","z_index_offset"],"pane":"","popup":null,"popup_max_height":null,"popup_max_width":300,"popup_min_width":50,"rise_offset":250,"rise_on_hover":false,"rotation_angle":0,"rotation_origin":"","title":"","visible":true,"z_index_offset":0}},"d82ea4efd7d042b48fce371df3e3c6fa":{"model_module":"@jupyter-widgets/controls","model_module_version":"1.5.0","model_name":"HTMLModel","state":{"_dom_classes":[],"_model_module":"@jupyter-widgets/controls","_model_module_version":"1.5.0","_model_name":"HTMLModel","_view_count":null,"_view_module":"@jupyter-widgets/controls","_view_module_version":"1.5.0","_view_name":"HTMLView","description":"","description_tooltip":null,"layout":"IPY_MODEL_b60c9995c63544b98dbb5070b9feb74d","placeholder":"​","style":"IPY_MODEL_a9e29dc4440446218b9c09c2cad63110","value":" 11/11 [00:00&lt;00:00, 461.76it/s]"}},"d8d6d67ead3d414ab632be89a69df0a3":{"model_module":"@jupyter-widgets/controls","model_module_version":"1.5.0","model_name":"HTMLModel","state":{"_dom_classes":[],"_model_module":"@jupyter-widgets/controls","_model_module_version":"1.5.0","_model_name":"HTMLModel","_view_count":null,"_view_module":"@jupyter-widgets/controls","_view_module_version":"1.5.0","_view_name":"HTMLView","description":"","description_tooltip":null,"layout":"IPY_MODEL_fa2287caa41845d3858ea0e0908b7c68","placeholder":"​","style":"IPY_MODEL_9f57fbf837ec439193f3bd987b35d4e9","value":"100%"}},"e6cec96ca99d43c5a68c089c6666cf54":{"model_module":"@jupyter-widgets/controls","model_module_version":"1.5.0","model_name":"HTMLModel","state":{"_dom_classes":[],"_model_module":"@jupyter-widgets/controls","_model_module_version":"1.5.0","_model_name":"HTMLModel","_view_count":null,"_view_module":"@jupyter-widgets/controls","_view_module_version":"1.5.0","_view_name":"HTMLView","description":"","description_tooltip":null,"layout":"IPY_MODEL_95af8e081d6346e4a0f0d3b2ee37ced3","placeholder":"​","style":"IPY_MODEL_51fe48fc340c432ab60ca75430c9bae4","value":" 10/10 [00:15&lt;00:00,  1.44s/it]"}},"f287723f18324006bc5c2b378f1300bb":{"model_module":"@jupyter-widgets/controls","model_module_version":"1.5.0","model_name":"DescriptionStyleModel","state":{"_model_module":"@jupyter-widgets/controls","_model_module_version":"1.5.0","_model_name":"DescriptionStyleModel","_view_count":null,"_view_module":"@jupyter-widgets/base","_view_module_version":"1.2.0","_view_name":"StyleView","description_width":""}},"fa2287caa41845d3858ea0e0908b7c68":{"model_module":"@jupyter-widgets/base","model_module_version":"1.2.0","model_name":"LayoutModel","state":{"_model_module":"@jupyter-widgets/base","_model_module_version":"1.2.0","_model_name":"LayoutModel","_view_count":null,"_view_module":"@jupyter-widgets/base","_view_module_version":"1.2.0","_view_name":"LayoutView","align_content":null,"align_items":null,"align_self":null,"border":null,"bottom":null,"display":null,"flex":null,"flex_flow":null,"grid_area":null,"grid_auto_columns":null,"grid_auto_flow":null,"grid_auto_rows":null,"grid_column":null,"grid_gap":null,"grid_row":null,"grid_template_areas":null,"grid_template_columns":null,"grid_template_rows":null,"height":null,"justify_content":null,"justify_items":null,"left":null,"margin":null,"max_height":null,"max_width":null,"min_height":null,"min_width":null,"object_fit":null,"object_position":null,"order":null,"overflow":null,"overflow_x":null,"overflow_y":null,"padding":null,"right":null,"top":null,"visibility":null,"width":null}}},"version_major":2,"version_minor":0}
+</script>
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    target: function(trigger) {
+      return trigger.previousElementSibling;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    setTimeout(function() {
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const cites = ref.parentNode.getAttribute('data-cites').split(' ');
+    tippyHover(ref, function() {
+      var popup = window.document.createElement('div');
+      cites.forEach(function(cite) {
+        var citeDiv = window.document.createElement('div');
+        citeDiv.classList.add('hanging-indent');
+        citeDiv.classList.add('csl-entry');
+        var biblioDiv = window.document.getElementById('ref-' + cite);
+        if (biblioDiv) {
+          citeDiv.innerHTML = biblioDiv.innerHTML;
+        }
+        popup.appendChild(citeDiv);
+      });
+      return popup.innerHTML;
+    });
+  }
+});
+</script>
+</div> <!-- /content -->
+
+
+
+</body></html>
